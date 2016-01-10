@@ -1,0 +1,25 @@
+{
+  "name": "qweeco",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Denis Bozhenkov <elf.marvin@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/VerticalHorizon/Qweeco-TestTask",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "qweeco/assets",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.8",
+    "angular-resource": "~1.4.8",
+    "bootstrap": "~3.3.6"
+  }
+}
