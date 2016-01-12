@@ -6,4 +6,4 @@ class Message(models.Model):
     text = models.TextField()
 
     class Meta:
-        ordering = ('created',)
+        ordering = ('-created',)

@@ -16,10 +16,14 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from rest_framework import routers
-from qweeco.board import views
-from django.contrib import admin
+from django.views.generic import TemplateView
+
+class SimpleStaticView(TemplateView):
+    def get_template_names(self):
+        return [self.kwargs.get('template_name') + ".html"]
 
 urlpatterns = [
-    url(r'^', include('qweeco.board.urls')),
-    url(r'^admin/', admin.site.urls),
+	url(r'^(?P<template_name>\w+)$', SimpleStaticView.as_view()),
+	url(r'^$', TemplateView.as_view(template_name='base.html')),
+	url(r'^api/', include('qweeco.board.urls')),
 ]

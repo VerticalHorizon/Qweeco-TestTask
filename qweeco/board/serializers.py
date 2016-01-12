@@ -5,7 +5,8 @@ from qweeco.board.models import Message
 class MessageSerializer(serializers.Serializer):
     pk = serializers.IntegerField(read_only=True)
     email = serializers.CharField(required=True, allow_blank=True, max_length=100)
-    text = serializers.CharField(style={'base_template': 'textarea.html'})
+    text = serializers.CharField(required=True, allow_blank=True)
+    created = serializers.DateTimeField(required=False)
 
     def create(self, validated_data):
         """
